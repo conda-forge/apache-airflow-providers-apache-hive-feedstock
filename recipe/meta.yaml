@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://archive.apache.org/dist/airflow/providers/{{ name }}-{{ version }}.tar.gz
-  sha256: 885a845e534a564bb00b8c927c01d094660922f41d903248133fa352001d8f09
+  sha256: e5c3037f6ada8dcf7c7b98b54429daa5b9b4efa414fda92996f8f1f5738e253a
 
 build:
   number: 0
@@ -16,12 +16,16 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.6,<3.9
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.6
+    # From upstream: Until the dropbox/PyHive#380 is solved
+    # we will exclude hive provider. This will be the next step
+    # to add full support and exclusion but we need to merge it first
+    # in order to be able to build image from `main`.
+    - python >=3.6,<3.9
     - apache-airflow >=2.1.0
     - hmsclient >=0.1.0
     - pyhive >=0.6.0
