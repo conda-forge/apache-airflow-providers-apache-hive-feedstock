@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "2.0.2" %}
+{% set version = "2.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://archive.apache.org/dist/airflow/providers/{{ name }}-{{ version }}.tar.gz
-  sha256: e501bd7f2086599eb99bc7a725ba1cf749136df9a63efebd3e58618049c9722e
+  sha256: 010f4aa5b6b55613cf1047258f89ffa06843128caa3e938e3c91650e25ac16c4
 
 build:
   number: 0
@@ -28,8 +28,13 @@ requirements:
     - python >=3.6,<3.9
     - apache-airflow >=2.1.0
     - hmsclient >=0.1.0
+    - pandas >=0.17.1,<2.0
     - pyhive >=0.6.0
     - thrift >=0.9.2
+    # temporary dependencies because of bad build of thrift_sasl
+    - thrift >=0.13
+    - pure-sasl >=0.6.2
+    - six >=1.13.0
 
 test:
   imports:
