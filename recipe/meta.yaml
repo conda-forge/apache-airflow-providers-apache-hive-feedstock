@@ -25,13 +25,14 @@ requirements:
     - python >=3.6,<3.9
     - apache-airflow >=2.1.0
     - hmsclient >=0.1.0
-    - pandas >=0.17.1,<2.0
+    - pandas >=0.17.1,<1.4
     - pyhive >=0.6.0
+    # pyhive[hive]
+    - sasl >=0.2.1
+    - thrift >=0.10.0
+    - thrift_sasl >=0.1.0
+
     - thrift >=0.9.2
-    # temporary dependencies because of bad build of thrift_sasl
-    - thrift >=0.13
-    - pure-sasl >=0.6.2
-    - six >=1.13.0
 
 test:
   imports:
