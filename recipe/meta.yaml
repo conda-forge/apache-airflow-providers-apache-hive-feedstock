@@ -16,13 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6,<3.9
+    - python >=3.6
     - pip
     - setuptools
     - wheel
   run:
-    # pyhive doesn't yet support python 3.9 correctly: https://github.com/dropbox/PyHive/issues/380
-    - python >=3.6,<3.9
+    - python >=3.6
     - apache-airflow >=2.1.0
     - hmsclient >=0.1.0
     - pandas >=0.17.1,<1.4
@@ -32,6 +31,7 @@ requirements:
     - thrift >=0.10.0
     - thrift_sasl >=0.1.0
 
+    - sasl	>=0.3.1
     - thrift >=0.9.2
 
 test:
