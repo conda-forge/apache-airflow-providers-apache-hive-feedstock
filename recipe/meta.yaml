@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://archive.apache.org/dist/airflow/providers/{{ name }}-{{ version }}.tar.gz
-  sha256: 0f4b146293816b9c2d3418c73d2a261dfdf46d3f0cd606381a6cb70670cbb509
+  sha256: b1fd284c34242cdfd9be783b97d229b49c6d87bef60143428c4d642f9065a80c
 
 build:
   number: 0
