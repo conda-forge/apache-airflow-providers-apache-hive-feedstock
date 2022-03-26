@@ -5,33 +5,27 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
-source:
-  url: https://archive.apache.org/dist/airflow/providers/{{ name }}-{{ version }}.tar.gz
-  sha256: b54d3aea220c3095b21133dd4a762e519ba20bcddd8767f77f1ea3693d8af3a3
-
 build:
-  number: 0
-  noarch: python
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-hive-{{ version }}.tar.gz
+  sha256: b54d3aea220c3095b21133dd4a762e519ba20bcddd8767f77f1ea3693d8af3a3
 
 requirements:
   host:
-    - python >=3.6
     - pip
+    - python
     - setuptools
-    - wheel
   run:
-    - python >=3.6
     - apache-airflow >=2.1.0
     - hmsclient >=0.1.0
-    - pandas >=0.17.1,<1.4
+    - pandas >=0.17.1
     - pyhive >=0.6.0
-    # pyhive[hive]
-    - sasl >=0.2.1
-    - thrift >=0.10.0
-    - thrift_sasl >=0.1.0
-
-    - sasl >=0.3.1
+    - python
+    - sasl >=0.3.1  # [py>=39]
     - thrift >=0.9.2
 
 test:
@@ -45,9 +39,10 @@ test:
 
 about:
   home: https://airflow.apache.org/
-  summary: Provider for Apache Hive for Apache Airflow
+  summary: Provider for Apache Airflow. Implements apache-airflow-providers-apache-hive package
   license: Apache-2.0
   license_file: LICENSE
+  license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-apache-hive/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
