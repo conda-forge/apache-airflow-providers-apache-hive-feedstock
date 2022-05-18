@@ -5,26 +5,31 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-hive-{{ version }}.tar.gz
+  sha256: e57507ad8257d2df9083613bef9693c8e86c9dc6193eea4b8879546186793b1e
+
 build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
-source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-hive-{{ version }}.tar.gz
-  sha256: e57507ad8257d2df9083613bef9693c8e86c9dc6193eea4b8879546186793b1e
-
 requirements:
   host:
-    - pip
     - python
+    - pip
     - setuptools
   run:
+    - python
     - apache-airflow >=2.1.0
     - hmsclient >=0.1.0
     - pandas >=0.17.1
     - pyhive >=0.6.0
-    - python
+    # pyhive[hive]
+    - sasl >=0.2.1
+    - thrift >=0.10.0
+    - thrift_sasl >=0.1.0
+
     - sasl >=0.3.1  # [py>=39]
     - thrift >=0.9.2
 
