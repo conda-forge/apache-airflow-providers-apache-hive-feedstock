@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "2.3.3" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-hive-{{ version }}.tar.gz
-  sha256: e57507ad8257d2df9083613bef9693c8e86c9dc6193eea4b8879546186793b1e
+  sha256: 05c8f2d26a9b0e2c46a9cdec6cf603053b96f2db025084964b4aef0319a86623
 
 build:
   skip: true  # [py<37 or win]
@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python
-    - apache-airflow >=2.1.0
+    - apache-airflow >=2.2.0
     - hmsclient >=0.1.0
     - pandas >=0.17.1
     - pyhive >=0.6.0
@@ -29,14 +29,14 @@ requirements:
     - sasl >=0.2.1
     - thrift >=0.10.0
     - thrift_sasl >=0.1.0
-
+    
     - sasl >=0.3.1  # [py>=39]
     - thrift >=0.9.2
 
 test:
   imports:
     - airflow.providers.apache.hive
-    - airflow.providers.apache.hive.example_dags
+    - airflow.providers.apache.hive.hooks
   commands:
     - pip check
   requires:
