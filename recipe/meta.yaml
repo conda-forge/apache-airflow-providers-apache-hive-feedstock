@@ -10,28 +10,22 @@ source:
   sha256: 1462a3959d893b72ecc04290fa871fa109e96316d5c87116fe9052640395a9f1
 
 build:
-  skip: true  # [py<37 or win]
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python
     - pip
+    - python
     - setuptools
   run:
-    - python
     - apache-airflow >=2.2.0
     - apache-airflow-providers-common-sql
     - hmsclient >=0.1.0
     - pandas >=0.17.1
     - pyhive >=0.6.0
-
-    # pyhive[hive]
-    - sasl >=0.2.1
-    - thrift >=0.10.0
-    - thrift_sasl >=0.1.0
-
+    - python
     - sasl >=0.3.1  # [py>=39]
     - thrift >=0.9.2
 
