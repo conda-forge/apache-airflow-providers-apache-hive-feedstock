@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,25 +7,31 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-hive-{{ version }}.tar.gz
-  sha256: 1462a3959d893b72ecc04290fa871fa109e96316d5c87116fe9052640395a9f1
+  sha256: e549e1b2e20698c5808e70115896d541119076ace9f397c042e7ac7e829abb44
 
 build:
-  skip: true  # [py<37]
+  skip: true  # [py<37 or win]
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - pip
     - python
     - setuptools
+    - pip
   run:
+    - python
+    - apache-airflow-providers-common-sql >=1.2.0
     - apache-airflow >=2.2.0
-    - apache-airflow-providers-common-sql
     - hmsclient >=0.1.0
     - pandas >=0.17.1
     - pyhive >=0.6.0
-    - python
+
+    # pyhive[hive]
+    - sasl >=0.2.1
+    - thrift >=0.10.0
+    - thrift_sasl >=0.1.0
+
     - sasl >=0.3.1  # [py>=39]
     - thrift >=0.9.2
 
