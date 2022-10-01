@@ -16,16 +16,16 @@ build:
 
 requirements:
   host:
-    - pip
     - python
     - setuptools
+    - pip
   run:
+    - python
+    - apache-airflow-providers-common-sql >=1.2.0
     - apache-airflow >=2.2.0
-    - apache-airflow-providers-common-sql
     - hmsclient >=0.1.0
     - pandas >=0.17.1
     - pyhive >=0.6.0
-    - python
     - sasl >=0.3.1  # [py>=39]
     - thrift >=0.9.2
 
