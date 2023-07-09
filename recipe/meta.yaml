@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "6.1.1" %}
+{% set version = "6.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-hive-{{ version }}.tar.gz
-  sha256: aea1c18a2b4732d8f62936519da3424a06bd4ebe7f20bedb9166c5dbf5aa6646
+  sha256: d520e53376ce2be285b8d933ddaf0df5a256987d65bcbefc6507c731c0319e10
 
 build:
   skip: true  # [win]
