@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "6.4.1" %}
+{% set version = "6.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apache_hive-{{ version }}.tar.gz
-  sha256: 31a31a1bcdf6099577f573da1675ddb439156bfb21fe4a299ec4445059c63174
+  sha256: 62e228e5725bd4fbf02cfa4713db5b52ecec40392007942498faace74544c15a
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - apache-airflow-providers-common-sql >=1.3.1
     - apache-airflow >=2.6.0
     - hmsclient >=0.1.0
-    - pandas >=0.17.1
+    - pandas >=1.2.5
     - pyhive >=0.7.0
 
     # pyhive[hive]
