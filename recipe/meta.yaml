@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "8.1.2" %}
+{% set version = "8.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apache_hive-{{ version }}.tar.gz
-  sha256: 3fa7150e563ee7c78e9e6292e57dca7fa257a32c8688a01b12de09d6ee37c4c0
+  sha256: 94fc522bdcdd4d11e2e883c70a0d5ba4140b1c47d5fc3743659aecb30e92163d
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.8
     - apache-airflow-providers-common-sql >=1.3.1
-    - apache-airflow >=2.7.0
+    - apache-airflow >=2.8.0
     - hmsclient >=0.1.0
     - jmespath >=0.7.0
     - pandas >=2.1.2,<2.2
