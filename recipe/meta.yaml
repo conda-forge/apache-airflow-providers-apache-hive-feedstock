@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
-{% set version = "9.0.0" %}
+{% set version = "9.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apache_hive-{{ version }}.tar.gz
-  sha256: fd746be0cad9b52cbdd859fe276b860c4982687a115a2773bc73ee7dff693c14
+  sha256: c60126091270177fbea1ef0850429d1dc8509d56a1547e84a227f09432156db0
 
 build:
   noarch: python
@@ -21,10 +21,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - apache-airflow-providers-common-sql >=1.20.0
     - apache-airflow >=2.9.0
+    - apache-airflow-providers-common-sql >=1.20.0
     - hmsclient >=0.1.0
-    - jmespath >=0.7.0
     - pandas >=2.1.2,<2.2
     - pyhive >=0.7.0
 
@@ -34,6 +33,7 @@ requirements:
     - thrift_sasl >=0.1.0
 
     - thrift >=0.11.0
+    - jmespath >=0.7.0
 
 test:
   imports:
@@ -48,7 +48,7 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-apache-hive for Apache Airflow
   license: Apache-2.0
-  license_file: airflow/providers/apache/hive/LICENSE
+  license_file: src/airflow/providers/apache/hive/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-apache-hive/stable/index.html
   dev_url: https://github.com/apache/airflow/
