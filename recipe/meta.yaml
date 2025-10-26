@@ -21,13 +21,13 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
-    - apache-airflow-providers-common-compat >=1.8.0
     - python >={{ python_min }}
     - apache-airflow >=2.10.0
+    - apache-airflow-providers-common-compat >=1.8.0
     - apache-airflow-providers-common-sql >=1.26.0
     - hmsclient >=0.1.0
     # more restrictive for python >=3.13
-    - pandas >=2.1.2
+    - pandas >=2.2.3
     - pyhive >=0.7.0
 
     # pyhive[hive_pure_sasl]
