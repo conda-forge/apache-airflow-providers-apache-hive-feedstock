@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-apache-hive" %}
 {% set version = "9.1.4" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -27,7 +26,7 @@ requirements:
     - apache-airflow-providers-common-sql >=1.26.0
     - hmsclient >=0.1.0
     # more restrictive for python >=3.13
-    - pandas >=2.1.2
+    - pandas >=2.2.3
     - pyhive >=0.7.0
 
     # pyhive[hive_pure_sasl]
@@ -35,7 +34,6 @@ requirements:
     - thrift >=0.10.0
     - thrift_sasl >=0.1.0
 
-    - thrift >=0.11.0
     - jmespath >=0.7.0
 
 test:
@@ -51,7 +49,9 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-apache-hive for Apache Airflow
   license: Apache-2.0
-  license_file: src/airflow/providers/apache/hive/LICENSE
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-apache-hive/stable/index.html
   dev_url: https://github.com/apache/airflow/
