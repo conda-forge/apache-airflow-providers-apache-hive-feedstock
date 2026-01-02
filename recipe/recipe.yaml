@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-hive
-  version: "9.2.1"
+  version: "9.2.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apache_hive-${{ version }}.tar.gz
-  sha256: fc03596866ad0b3d97030b36a226ec69b12145c162b1dbf79418a9a9fe5f4bd9
+  sha256: 34f5b8b1deae4dc8b01c1ff2bd22a0838160a8a46452895a4b178e1205a5dee4
 
 build:
   noarch: python
@@ -40,7 +40,7 @@ requirements:
 tests:
   - python:
       imports:
-      - airflow.providers.apache.hive
+        - airflow.providers.apache.hive
       pip_check: true
       python_version: ${{ python_min }}.*
 
