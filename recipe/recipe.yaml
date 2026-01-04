@@ -40,7 +40,7 @@ requirements:
 tests:
   - python:
       imports:
-        - airflow.providers.apache.hive
+      - airflow.providers.apache.hive
       pip_check: true
       python_version: ${{ python_min }}.*
 
