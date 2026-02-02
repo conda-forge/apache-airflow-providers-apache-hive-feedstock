@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-hive
-  version: "9.2.4"
+  version: 9.2.4
 
 package:
   name: ${{ name|lower }}
@@ -36,7 +36,6 @@ requirements:
     - thrift_sasl >=0.1.0
 
     - jmespath >=0.7.0
-
 tests:
   - python:
       imports:
