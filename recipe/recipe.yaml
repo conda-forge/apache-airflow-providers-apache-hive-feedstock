@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-hive
-  version: "9.3.0"
+  version: 9.4.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apache_hive-${{ version }}.tar.gz
-  sha256: 329c1ab1a4eca00722bf9ebd11d4557a8cb48ab785381efd9ed684978b8d3f00
+  sha256: c31ea143757964be1047bbefcecf89b73bb3ed5b173a0bedc1ee7a524c74a2d5
 
 build:
   noarch: python
@@ -26,17 +26,9 @@ requirements:
     - apache-airflow-providers-common-compat >=1.12.0
     - apache-airflow-providers-common-sql >=1.32.0
     - hmsclient >=0.1.0
-    # more restrictive for python >=3.13
-    - pandas >=2.2.3
+    - pandas >=2.1.2
     - pyhive >=0.7.0
-
-    # pyhive[hive_pure_sasl]
-    - pure-sasl >=0.6.2
-    - thrift >=0.10.0
-    - thrift_sasl >=0.1.0
-
     - jmespath >=0.7.0
-
 tests:
   - python:
       imports:
