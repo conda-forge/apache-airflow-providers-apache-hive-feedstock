@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-hive
-  version: "9.4.2"
+  version: "9.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apache_hive-${{ version }}.tar.gz
-  sha256: 4b5cc61a1aca74a9c0f23b30f67109fe9692a84d8a6f76b3bb12e8033984eb69
+  sha256: 38b6d0dcb53323eeb6e7ab7d0ffe2a71ea607340048bf7e27a010f6daaa42b24
 
 build:
   noarch: python
