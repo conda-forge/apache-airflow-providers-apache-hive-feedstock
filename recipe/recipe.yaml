@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-hive
-  version: 9.7.1
+  version: "10.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apache_hive-${{ version }}.tar.gz
-  sha256: 4a0b575cb03fd5ac93143dfa944c61af629d9b107ac0e39c2076ada946206e9e
+  sha256: 30df04decb6f6708ced9fb0dabdfae9c1dabb744ada202e15c93964752208888
 
 build:
   noarch: python
@@ -19,7 +19,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - flit-core ==4.1.0
+    - flit-core ==4.2.0
   run:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0
